@@ -1,31 +1,27 @@
-import ImageWithOverlayDevice from "@/app/ui/image-with-overlay-device";
+import Container from "@/app/components/container";
 import Image from "next/image";
 import React from "react";
 
 export default function ProjectImageGallery({ project }) {
   return (
-    <section className="w-full">
-      <ul>
-        {project.srcImageGallery.map((srcImage, i) => (
-          <li className="bg-[#e6e9eb]" key={srcImage}>
-            {i % 2 === 0 ? (
-              <div className="px-space-md py-space-xl lg:px-space-xl">
-                <ImageWithOverlayDevice src={srcImage} />
-              </div>
-            ) : (
+    <section className="w-full py-space-lg md:py-space-xl">
+      <Container>
+        <ul className="space-y-4 lg:space-y-10">
+          {project.images.map((image, i) => (
+            <li className="bg-[#e6e9eb]" key={image}>
               <div className="relative aspect-[5/4] lg:aspect-video">
                 <Image
-                  src={srcImage}
+                  src={image}
                   alt="project image"
                   fill
                   sizes="100vw"
                   className="object-cover"
                 />
               </div>
-            )}
-          </li>
-        ))}
-      </ul>
+            </li>
+          ))}
+        </ul>
+      </Container>
     </section>
   );
 }

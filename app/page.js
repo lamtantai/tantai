@@ -1,3 +1,5 @@
+import Footer from "./components/footer/footer";
+import Header from "./components/header/header";
 import HeroSection from "./components/hero-section/hero-section";
 import InfiniteText from "./components/infinite-text";
 import IntroduceSection from "./components/introduce-section";
@@ -10,6 +12,7 @@ export default function Home() {
       <IntroduceSection />
       <LatestProject />
       <InfiniteText />
+      <Footer />
     </>
   );
 }

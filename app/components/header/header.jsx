@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Logo from "../logo";
 import Link from "next/link";
-import NavItem, { NavItemSocial } from "./nav-item";
+import NavItem from "./nav-item";
 import {
   motion,
   useMotionValueEvent,
@@ -11,6 +11,8 @@ import {
   useTransform,
 } from "framer-motion";
 import { usePathname } from "next/navigation";
+import AnimatedButton from "@/app/ui/animated-button";
+import { clippathInRight } from "@/app/utils/animations";
 
 const navItems = [
   {
@@ -27,40 +29,6 @@ const navItems = [
     href: "/about",
   },
 ];
-
-const navItemsSocial = [
-  {
-    name: "Github",
-    href: "/",
-  },
-  {
-    name: "Email",
-    href: "/",
-  },
-  {
-    name: "Phone",
-    href: "/about",
-  },
-];
-
-const MenuSlide = {
-  initial: {
-    clipPath: "polygon(100% 0, 100% 0%, 100% 100%, 100% 100%)",
-    visibility: "hidden",
-  },
-
-  open: {
-    clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0% 100%)",
-    visibility: "visible",
-    transition: { duration: 1, ease: [0.62, 0.05, 0.01, 0.99] },
-  },
-
-  close: {
-    clipPath: "polygon(100% 0, 100% 0%, 100% 100%, 100% 100%)",
-    visibility: "hidden",
-    transition: { duration: 1, ease: [0.62, 0.05, 0.01, 0.99] },
-  },
-};
 
 function MenuButton({ onClick, children }) {
   return (
@@ -80,23 +48,27 @@ function MenuButton({ onClick, children }) {
 }
 
 export default function Header() {
+  const pathname = usePathname(); // Get the current pathname
+
+  let latestScrollY = useRef(0);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [isHeaderHidden, setIsHeaderHidden] = useState(false);
+  const [isHeaderHidden, setIsHeaderHidden] = useState(false);
+
   const { scrollY } = useScroll();
-  // let latestScrollY = useRef(0);
 
   const scale = useTransform(scrollY, [0, 300], [1, 0.2]);
 
-  // useMotionValueEvent(scrollY, "change", (y) => {
-  //   const differentScroll = latestScrollY.current - y;
+  useMotionValueEvent(scrollY, "change", (y) => {
+    const differentScroll = latestScrollY.current - y;
 
-  //   if (Math.abs(differentScroll) >= 50 && y > window.innerHeight - 50) {
-  //     setIsHeaderHidden(differentScroll < 0);
-  //     latestScrollY.current = y;
-  //   }
-  // });
+    if (Math.abs(differentScroll) >= 50 && y > window.innerHeight - 50) {
+      setIsHeaderHidden(differentScroll < 0);
+      latestScrollY.current = y;
+    }
+  });
 
-  // CLOSE MENU ON PRESS ESC
+  // Set MenuOpen to false when press ESC key
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape" && isMenuOpen) {
@@ -111,12 +83,17 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  // Reset isHeaderHidden when pathname changes
+  useEffect(() => {
+    setIsHeaderHidden(false); // Reset the state
+  }, [pathname]); // Runs whenever the path changes
+
   return (
     <>
       <motion.header
         className="fixed left-0 top-0 z-50 w-full text-primary mix-blend-difference"
-        // style={{ y: isHeaderHidden ? "-100%" : 0, transitionDuration: "0.4s" }}
-        key={usePathname()}
+        key={pathname}
+        style={{ y: isHeaderHidden ? "-100%" : 0, transitionDuration: "0.3s" }}
       >
         <div className="p-space-sm">
           <div className="relative flex items-end justify-end">
@@ -153,10 +130,10 @@ export default function Header() {
 
       {/* NAV MENU */}
       <motion.div
-        className="fixed right-0 top-0 z-50 h-screen w-full bg-secondary font-minecraft uppercase text-primary md:w-navMenu"
+        className="fixed right-0 top-0 z-50 h-dvh w-full bg-secondary font-minecraft uppercase text-primary md:w-navMenu"
         initial="initial"
-        animate={isMenuOpen ? "open" : "close"}
-        variants={MenuSlide}
+        animate={isMenuOpen ? "enter" : "exit"}
+        variants={clippathInRight}
       >
         <div className="absolute top-0 w-full p-space-sm">
           <div className="relative flex items-end justify-end">
@@ -197,11 +174,19 @@ export default function Header() {
             <h4 className="text-primary/70 mb-4 text-xs">Get in touch</h4>
 
             <ul className="flex gap-x-10">
-              {navItemsSocial.map((item) => (
-                <li key={item.name}>
-                  <NavItemSocial item={item} />
-                </li>
-              ))}
+              <li>
+                <AnimatedButton href="/" label="github" color="white" />
+              </li>
+              <li>
+                <AnimatedButton
+                  href="mailto:lttai.dev@gmail.com"
+                  label="email"
+                  color="white"
+                />
+              </li>
+              <li>
+                <AnimatedButton href="/" label="phone" color="white" />
+              </li>
             </ul>
           </div>
         </motion.nav>

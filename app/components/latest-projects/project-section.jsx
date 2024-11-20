@@ -63,7 +63,7 @@ export default function ProjectSection({
         className="absolute inset-0 z-50 h-full w-full"
       />
       <Image
-        src={project.srcImage}
+        src={project.thumbnail}
         alt="project image"
         fill
         className="object-cover"

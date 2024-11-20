@@ -33,13 +33,12 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${minecraft.variable} ${poppins.variable} ${bulevar.variable} scroll-smooth font-poppins`}
+      className={`${minecraft.variable} ${poppins.variable} ${bulevar.variable} font-poppins`}
     >
       <body>
         <SmoothScroll>
           <Header />
           <main className="relative z-10 min-h-screen">{children}</main>
-          <Footer />
         </SmoothScroll>
       </body>
     </html>

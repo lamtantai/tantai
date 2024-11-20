@@ -6,9 +6,9 @@ import { opacity, slideInDown, slideInLeft } from "../utils/animations";
 
 export default function AboutSection() {
   return (
-    <section className="bg-primary text-secondary lg:text-balance">
+    <section className="text-secondary lg:text-balance">
       <Container>
-        <div className="flex flex-col gap-y-10 md:flex-row">
+        <div className="flex flex-col gap-y-10 pt-space-xl md:flex-row">
           <h2 className="text-xl font-semibold md:flex-[1.5] md:pr-space-sm lg:text-3xl 2xl:text-5xl/tight">
             <SplitText
               text="Though my background is self-taught, I'm dedicated to continuously learning and applying new skills through hands-on projects. Each one is an opportunity to explore new concepts and build my experience."

@@ -21,14 +21,3 @@ export default function NavItem({ item, onClick }) {
     </div>
   );
 }
-
-export function NavItemSocial({ item }) {
-  return (
-    <div className="group relative duration-500 hover:-translate-y-1">
-      <Link href={item.href}>
-        <h3 className="text-lg font-semibold">{item.name}</h3>
-      </Link>
-      <div className="absolute bottom-0 left-0 h-[2px] w-full origin-right-center scale-x-0 bg-primary transition-transform duration-500 group-hover:origin-left-center group-hover:scale-x-100" />
-    </div>
-  );
-}

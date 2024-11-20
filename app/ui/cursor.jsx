@@ -30,7 +30,7 @@ export default function Cursor({ isHovered }) {
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [handleMouseMove]);
 
   // Destructure x and y springs for use in motion styles
   const { x, y } = mousePosition;

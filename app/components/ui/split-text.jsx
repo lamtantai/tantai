@@ -14,7 +14,7 @@ export default function SplitText({ text, type, animation, delay, width }) {
     <motion.span
       ref={ref}
       initial="initial"
-      animate={isInView && "enter"}
+      whileInView="enter"
       variants={{
         enter: (delay) => ({
           transition: {

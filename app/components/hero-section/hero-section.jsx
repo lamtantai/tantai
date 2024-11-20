@@ -30,10 +30,7 @@ export default function HeroSection({ text }) {
       className="relative -z-10 -mb-[100vh] h-[200vh] bg-secondary"
       ref={container}
     >
-      <motion.div
-        className="sticky top-0 h-screen"
-        style={{ scale, opacity, y }}
-      >
+      <motion.div className="sticky top-0 h-dvh" style={{ scale, opacity, y }}>
         <div className="flex h-full flex-col justify-end bg-primary px-space-sm pb-space-md">
           <div className="space-y-3">
             <StatusTag />
@@ -58,7 +55,7 @@ function StatusTag() {
     <motion.button
       onClick={() => {
         document.getElementById("text-infinite").scrollIntoView({
-          behavior: "auto",
+          behavior: "smooth",
           block: "start",
         });
       }}

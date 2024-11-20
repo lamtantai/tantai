@@ -91,6 +91,15 @@ module.exports = {
         "space-xl": "clamp(6rem, 3.913rem + 10.4348vw, 12rem)",
       },
 
+      margin: {
+        header: "calc(clamp(5rem, 7.5vw, 10rem) * 0.2)",
+        navMenu: "clamp(3.75rem, 3.4466rem + 1.2945vw, 5rem)",
+        "space-sm": "clamp(1rem, 0.5665rem + 1.8497vw, 2rem)",
+        "space-md": "clamp(1.75rem, 1.1539rem + 2.5434vw, 3.125rem)",
+        "space-lg": "clamp(3.5rem, 2.4162rem + 4.6243vw, 6rem)",
+        "space-xl": "clamp(6rem, 3.913rem + 10.4348vw, 12rem)",
+      },
+
       gap: {
         md: "clamp(2.5rem, -2.9191rem + 23.1214vw, 15rem)",
       },

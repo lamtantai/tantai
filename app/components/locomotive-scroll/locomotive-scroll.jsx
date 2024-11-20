@@ -19,5 +19,9 @@ export default function SmoothScroll({ children }) {
     }
   }, []);
 
-  return <div ref={scrollRef}>{children}</div>;
+  return (
+    <div data-scroll-container ref={scrollRef}>
+      {children}
+    </div>
+  );
 }

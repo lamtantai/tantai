@@ -2,7 +2,7 @@
 
 import InfiniteText from "@/app/components/infinite-text";
 import Cursor from "@/app/ui/cursor";
-import { projectsListData } from "@/app/lib/data";
+import { projectsListData, projects } from "@/app/lib/data";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,12 +13,12 @@ import { opacity } from "@/app/utils/animations";
 
 export default function ProjectsList() {
   return (
-    <section className="bg-primary">
+    <section className="">
       <Container>
         <nav>
           <ul>
-            {projectsListData.map((project, i) => (
-              <li key={project.name + i} className="py-space-md">
+            {projects.map((project, i) => (
+              <li key={project.id} className="py-space-md">
                 <ProjectCard project={project} />
               </li>
             ))}
@@ -56,7 +56,7 @@ function ProjectCard({ project }) {
           className="absolute inset-0 z-10 flex h-full w-full items-start justify-center"
         />
         <Image
-          src={project.srcImage}
+          src={project.thumbnail}
           alt="project image"
           sizes="100%"
           fill
@@ -83,7 +83,7 @@ function ProjectCard({ project }) {
 
           <p className="text-sm font-semibold sm:text-base">
             <SplitText
-              text={project.introduction}
+              text={project.description}
               type="words"
               animation={opacity}
             />

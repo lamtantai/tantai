@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer
-      className="sticky bottom-0 w-full bg-secondary text-primary"
+      className="sticky bottom-0 -z-50 w-full bg-secondary text-primary"
       id="footer"
     >
       <div className="flex flex-col gap-y-10 px-space-sm py-space-md lg:flex-row lg:gap-x-10">
@@ -29,7 +29,7 @@ export default function Footer() {
 
           <Link
             href="mailto:lttai.dev@gmail.com"
-            className="group relative overflow-clip text-xsmall/none"
+            className="group relative overflow-clip text-xsmall/tight"
           >
             <span className="relative inline-block origin-[50%_50%_-0.55em] duration-500 ease-in-out-quart rotate-x-0 lg:group-hover:rotate-x-90">
               <span className="text-nowrap uppercase">Send me a message</span>

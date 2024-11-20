@@ -1,14 +1,15 @@
 import React from "react";
 import SplitText from "./ui/split-text";
-import Link from "next/link";
 import Container from "./container";
-import { opacity, slideInUp } from "../utils/animations";
+import { opacity, scaleX, slideInUp } from "../utils/animations";
+import AnimatedInView from "./animated-in-view";
+import AnimatedButton from "../ui/animated-button";
 
 export default function IntroduceSection() {
   return (
-    <section className="bg-primary text-secondary">
+    <section className="text-secondary">
       <Container>
-        <h2 className="font-bulevar text-[40vw]/none uppercase lg:-mb-[5vw]">
+        <h2 className="pt-space-xl font-bulevar text-[40vw]/none uppercase lg:-mb-[5vw]">
           <SplitText
             text="helloooo"
             type="chars"
@@ -26,20 +27,19 @@ export default function IntroduceSection() {
             />
           </p>
 
-          <div className="group relative w-fit duration-500 hover:-translate-y-1">
-            <Link
-              href="/about"
-              className="font-minecraft text-2xl font-bold uppercase xl:text-4xl"
-            >
-              More about me
-            </Link>
-            <div className="absolute bottom-0 left-0 h-[0.2em] w-full origin-right-center scale-x-0 bg-secondary transition-transform duration-500 group-hover:origin-left-center group-hover:scale-x-100" />
-          </div>
+          <AnimatedButton
+            label="more about me"
+            color="black"
+            href="/about"
+            className="text-2xl xl:text-4xl"
+          />
         </div>
 
-        <h2 className="pb-space-sm pt-space-xl font-bulevar text-xlarge/none font-black uppercase">
-          All projects
-        </h2>
+        <AnimatedInView animation={scaleX}>
+          <h2 className="pb-space-sm pt-space-xl font-bulevar text-xlarge/none font-black uppercase">
+            All projects
+          </h2>
+        </AnimatedInView>
       </Container>
     </section>
   );
