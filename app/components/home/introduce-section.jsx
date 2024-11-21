@@ -1,15 +1,17 @@
 import React from "react";
-import SplitText from "./ui/split-text";
-import Container from "./container";
-import { opacity, scaleX, slideInUp } from "../utils/animations";
-import AnimatedInView from "./animated-in-view";
-import AnimatedButton from "../ui/animated-button";
+
+import SplitText from "@/app/ui/split-text";
+
+import AnimatedButton from "@/app/ui/animated-button";
+import Container from "../container";
+
+import { opacity, slideInUp } from "@/app/utils/animations";
 
 export default function IntroduceSection() {
   return (
-    <section className="text-secondary">
+    <section>
       <Container>
-        <h2 className="pt-space-xl font-bulevar text-[40vw]/none uppercase lg:-mb-[5vw]">
+        <h2 className="font-bulevar text-[40vw]/none uppercase lg:-mb-[5vw]">
           <SplitText
             text="helloooo"
             type="chars"
@@ -34,12 +36,6 @@ export default function IntroduceSection() {
             className="text-2xl xl:text-4xl"
           />
         </div>
-
-        <AnimatedInView animation={scaleX}>
-          <h2 className="pb-space-sm pt-space-xl font-bulevar text-xlarge/none font-black uppercase">
-            All projects
-          </h2>
-        </AnimatedInView>
       </Container>
     </section>
   );

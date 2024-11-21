@@ -1,25 +1,29 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import splitText from "@/app/utils/split-text";
+import React, { memo } from "react";
 
-export default function SplitText({ text, type, animation, delay, width }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "0px 0px -30% 0px" });
+import { motion } from "framer-motion";
 
-  const { words, chars } = splitText(text);
+export default memo(function SplitText({
+  text,
+  type,
+  animation = {},
+  delay = 0,
+  width,
+}) {
+  const words = text.split(" ");
+  const chars = text.split("");
 
   return (
     <motion.span
-      ref={ref}
       initial="initial"
       whileInView="enter"
+      viewport={{ once: true }}
       variants={{
         enter: (delay) => ({
           transition: {
             staggerChildren: 0.035,
-            delayChildren: delay ? delay : 0,
+            delayChildren: delay,
           },
         }),
       }}
@@ -31,7 +35,7 @@ export default function SplitText({ text, type, animation, delay, width }) {
       {type === "chars" && <SplitChars chars={chars} animation={animation} />}
     </motion.span>
   );
-}
+});
 
 function SplitWords({ words, animation }) {
   return words.map((word, i) => (

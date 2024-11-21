@@ -1,5 +1,6 @@
 import { motion, useSpring } from "framer-motion";
 import { useEffect } from "react";
+import { scale } from "../utils/animations";
 
 export default function Cursor({ isHovered }) {
   // Define the spring configuration for smooth following motion
@@ -15,36 +16,31 @@ export default function Cursor({ isHovered }) {
     y: useSpring(0, spring),
   };
 
-  const cursorSize = 100;
+  const { x, y } = mousePosition;
 
-  // Handle mouse movement
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    const targetX = clientX - cursorSize / 2;
-    const targetY = clientY - cursorSize / 2;
-    mousePosition.x.set(targetX);
-    mousePosition.y.set(targetY);
-  };
+  const cursorSize = 100;
 
   // Add the event listener on mount, and remove it on unmount
   useEffect(() => {
+    // Handle mouse movement
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      const targetX = clientX - cursorSize / 2;
+      const targetY = clientY - cursorSize / 2;
+      mousePosition.x.set(targetX);
+      mousePosition.y.set(targetY);
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [handleMouseMove]);
-
-  // Destructure x and y springs for use in motion styles
-  const { x, y } = mousePosition;
+  });
 
   return (
     <motion.div
-      className="pointer-events-none fixed left-0 top-0 z-50 hidden cursor-pointer items-center justify-center rounded-full bg-primary mix-blend-difference backdrop-blur-2xl lg:flex"
+      className="pointer-events-none fixed inset-0 z-50 cursor-pointer items-center justify-center rounded-full bg-primary mix-blend-difference lg:flex"
       initial={false}
-      animate={{
-        scale: isHovered ? 1 : 0,
-      }}
-      transition={{
-        scale: { duration: 0.3, ease: [0.33, 1, 0.68, 1] },
-      }}
+      animate={isHovered ? "enter" : "initial"}
+      variants={scale}
       style={{
         x,
         y,
@@ -53,8 +49,7 @@ export default function Cursor({ isHovered }) {
       }}
     >
       <span className="text-center text-base/none font-bold uppercase text-primary mix-blend-difference">
-        view <br />
-        project
+        view project
       </span>
     </motion.div>
   );

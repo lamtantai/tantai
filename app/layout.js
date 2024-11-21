@@ -3,9 +3,7 @@ import "./globals.css";
 import SmoothScroll from "./components/locomotive-scroll/locomotive-scroll";
 
 import { Poppins } from "next/font/google";
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
-import PageScrollProgress from "./components/ui/page-scroll-progress";
+import Header from "./components/header";
 
 const poppins = Poppins({
   weight: ["400", "600", "800"],
@@ -38,7 +36,9 @@ export default function RootLayout({ children }) {
       <body>
         <SmoothScroll>
           <Header />
-          <main className="relative z-10 min-h-screen">{children}</main>
+          <main className="relative z-10 min-h-screen text-secondary">
+            {children}
+          </main>
         </SmoothScroll>
       </body>
     </html>

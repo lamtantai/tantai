@@ -1,24 +1,23 @@
 "use client";
 
-import InfiniteText from "@/app/components/infinite-text";
 import Cursor from "@/app/ui/cursor";
-import { projectsListData, projects } from "@/app/lib/data";
+import { projects } from "@/app/lib/data";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
 import Container from "@/app/components/container";
-import SplitText from "@/app/components/ui/split-text";
+import SplitText from "@/app/ui/split-text";
 import { opacity } from "@/app/utils/animations";
 
 export default function ProjectsList() {
   return (
-    <section className="">
+    <section>
       <Container>
         <nav>
-          <ul>
+          <ul className="flex flex-col gap-y-14 lg:gap-y-24">
             {projects.map((project, i) => (
-              <li key={project.id} className="py-space-md">
+              <li key={project.id}>
                 <ProjectCard project={project} />
               </li>
             ))}
@@ -37,11 +36,11 @@ function ProjectCard({ project }) {
 
   return (
     <div
-      className="relative flex h-fit flex-col gap-y-3 overflow-clip lg:flex-row lg:justify-between"
+      className="flex flex-col gap-y-3 overflow-clip lg:flex-row lg:justify-between"
       ref={ref}
     >
       <motion.div
-        className="relative aspect-[4/5] sm:aspect-[5/4] lg:basis-2/3 2xl:aspect-[16/10]"
+        className="relative aspect-[4/5] w-full sm:aspect-[5/4] lg:max-w-[60vw] 2xl:aspect-[16/10]"
         animate={{
           clipPath: isInView ? "inset(0 0 0 0)" : "inset(100% 0 0 0)",
           transition: { duration: 0.6, ease: [0.33, 1, 0.68, 1] },
@@ -55,10 +54,11 @@ function ProjectCard({ project }) {
           href={project.href}
           className="absolute inset-0 z-10 flex h-full w-full items-start justify-center"
         />
+
         <Image
           src={project.thumbnail}
           alt="project image"
-          sizes="100%"
+          sizes="(min-width: 1024px) 60vw, 100vw"
           fill
           className="object-cover"
           style={{
@@ -70,12 +70,12 @@ function ProjectCard({ project }) {
 
       <div className="lg:basis-1/4">
         <div className="sticky top-5 flex flex-col gap-y-3 text-secondary lg:gap-y-8">
-          <div className="uppercase">
-            <span className="font-minecraft text-3xl font-bold md:text-4xl">
+          <div className="font-semibold uppercase">
+            <span className="font-minecraft text-3xl md:text-4xl">
               {project.name}
             </span>
 
-            <div className="flex justify-between text-sm font-semibold md:text-base lg:max-w-72">
+            <div className="flex justify-between text-sm md:text-base lg:max-w-72">
               <span className="">{project.type}</span>
               <span className="">{project.year}</span>
             </div>

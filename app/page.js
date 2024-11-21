@@ -1,16 +1,15 @@
-import Footer from "./components/footer/footer";
-import Header from "./components/header/header";
-import HeroSection from "./components/hero-section/hero-section";
+import Footer from "./components/footer";
+import HeroSection from "./components/hero-section";
 import InfiniteText from "./components/infinite-text";
-import IntroduceSection from "./components/introduce-section";
-import LatestProject from "./components/latest-projects/latest-project";
+import AllProjects from "./components/home/all-projects";
+import IntroduceSection from "./components/home/introduce-section";
 
 export default function Home() {
   return (
     <>
       <HeroSection text="Self-taught front end developer based in Ho Chi Minh." />
       <IntroduceSection />
-      <LatestProject />
+      <AllProjects />
       <InfiniteText />
       <Footer />
     </>

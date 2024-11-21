@@ -1,14 +1,11 @@
 "use client";
 
-// IMPORT FROM REACT
 import { useRef } from "react";
 
-// IMPORT FROM NEXT
-import Link from "next/link";
-
-// IMPORT FROM FRAMER
 import { motion, useScroll, useTransform } from "framer-motion";
+
 import SplitText from "../ui/split-text";
+
 import { slideInUp } from "@/app/utils/animations";
 
 const delay = 1;
@@ -30,12 +27,15 @@ export default function HeroSection({ text }) {
       className="relative -z-10 -mb-[100vh] h-[200vh] bg-secondary"
       ref={container}
     >
-      <motion.div className="sticky top-0 h-dvh" style={{ scale, opacity, y }}>
-        <div className="flex h-full flex-col justify-end bg-primary px-space-sm pb-space-md">
+      <motion.div
+        className="sticky top-0 h-screen bg-primary"
+        style={{ scale, opacity, y }}
+      >
+        <div className="flex h-full flex-col justify-end px-space-sm pb-space-md">
           <div className="space-y-3">
             <StatusTag />
 
-            <h1 className="text-large/tight font-semibold text-secondary lg:max-w-[85%]">
+            <h1 className="text-large/tight font-semibold lg:max-w-[88%]">
               <SplitText
                 text={text}
                 type="words"
@@ -59,7 +59,7 @@ function StatusTag() {
           block: "start",
         });
       }}
-      className="flex w-fit items-center justify-between gap-x-3 bg-zinc-500 px-5 py-3 text-primary hover:bg-zinc-600 active:scale-105 active:bg-zinc-900"
+      className="flex w-fit items-center justify-between gap-x-3 bg-zinc-500 px-5 py-3 text-primary"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -69,6 +69,8 @@ function StatusTag() {
           ease: [0.65, 0, 0.35, 1],
         },
       }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
     >
       <span className="relative size-2 rounded-full bg-green-500">
         <span className="absolute inset-0 h-full w-full animate-ping rounded-full bg-green-400"></span>

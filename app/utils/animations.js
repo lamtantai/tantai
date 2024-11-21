@@ -1,4 +1,5 @@
 const transition = { duration: 1, ease: [0.65, 0, 0.35, 1] };
+const transitionScale = { duration: 0.6, ease: [0.65, 0, 0.35, 1] };
 const transitionClippath = { duration: 1, ease: [0.62, 0.05, 0.01, 0.99] };
 
 export const slideInUp = {
@@ -109,6 +110,17 @@ export const clippathInLeft = {
 };
 
 // SCALE
+export const scale = {
+  initial: {
+    scale: 0,
+  },
+
+  enter: {
+    scale: 1,
+    transition: transitionScale,
+  },
+};
+
 export const scaleX = {
   initial: {
     transform: "scaleX(0)",

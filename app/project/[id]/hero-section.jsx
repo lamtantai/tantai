@@ -1,15 +1,11 @@
+import React from "react";
+
 import Container from "@/app/components/container";
 import AnimatedButton from "@/app/ui/animated-button";
 import AnimatedInView from "@/app/components/animated-in-view";
-import {
-  clippathInDown,
-  opacity,
-  scaleX,
-  slideInLeft,
-  slideInUp,
-} from "@/app/utils/animations";
-import React from "react";
 import DivideLine from "@/app/ui/divide-line";
+
+import { clippathInDown, opacity, slideInUp } from "@/app/utils/animations";
 
 export default function HeroSection({ project }) {
   return (
@@ -17,7 +13,7 @@ export default function HeroSection({ project }) {
       <Container>
         <div className="pt-[calc(20vh+15vw)]">
           <AnimatedInView animation={opacity}>
-            <h1 className="mb-space-sm font-minecraft text-large font-bold uppercase">
+            <h1 className="mb-space-md font-minecraft text-large font-bold uppercase">
               {project.name}
             </h1>
           </AnimatedInView>
