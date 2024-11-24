@@ -28,7 +28,7 @@ export default function HeroSection({ text }) {
       ref={container}
     >
       <motion.div
-        className="sticky top-0 h-dvh bg-primary"
+        className="sticky top-0 h-screen bg-primary"
         style={{ scale, opacity, y }}
       >
         <div className="flex h-full flex-col justify-end px-space-sm pb-space-md">

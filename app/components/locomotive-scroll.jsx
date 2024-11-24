@@ -1,27 +1,41 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { createContext, useContext, useRef, useEffect } from "react";
+
 import LocomotiveScroll from "locomotive-scroll";
 
-export default function SmoothScroll({ children }) {
-  const scrollRef = useRef(null);
+const SmoothScrollContext = createContext();
+
+export const SmoothScrollProvider = ({ children }) => {
+  const locomotiveInstance = useRef(null);
 
   useEffect(() => {
-    if (scrollRef.current) {
-      const locomotiveScroll = new LocomotiveScroll({
-        el: scrollRef.current,
+    if (!locomotiveInstance.current) {
+      locomotiveInstance.current = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
         smooth: true,
       });
-
-      return () => {
-        locomotiveScroll.destroy();
-      };
     }
+
+    return () => {
+      locomotiveInstance.current?.destroy();
+      locomotiveInstance.current = null;
+    };
   }, []);
 
+  const stopScroll = () => locomotiveInstance.current?.stop();
+  const startScroll = () => locomotiveInstance.current?.start();
+
+  const contextValue = {
+    stopScroll,
+    startScroll,
+  };
+
   return (
-    <div data-scroll-container ref={scrollRef}>
-      {children}
-    </div>
+    <SmoothScrollContext.Provider value={contextValue}>
+      <div data-scroll-container>{children}</div>
+    </SmoothScrollContext.Provider>
   );
-}
+};
+
+export const useSmoothScroll = () => useContext(SmoothScrollContext);

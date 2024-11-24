@@ -3,7 +3,7 @@ import "./globals.css";
 
 import { Poppins } from "next/font/google";
 import Header from "./components/header";
-import SmoothScroll from "./components/locomotive-scroll";
+import { SmoothScrollProvider } from "./components/locomotive-scroll";
 
 const poppins = Poppins({
   weight: ["400", "600", "800"],
@@ -34,12 +34,12 @@ export default function RootLayout({ children }) {
       className={`${minecraft.variable} ${poppins.variable} ${bulevar.variable} font-poppins`}
     >
       <body>
-        <SmoothScroll>
+        <SmoothScrollProvider>
           <Header />
-          <main className="relative z-10 min-h-screen text-secondary">
+          <main data-scroll-section className="relative z-10 text-secondary">
             {children}
           </main>
-        </SmoothScroll>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

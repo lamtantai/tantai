@@ -89,7 +89,7 @@ export default function Header() {
       {/* BACKGROUND OVERLAY WHEN MENU OPEN */}
       <div
         className={clsx(
-          "fixed inset-0 h-screen w-screen bg-secondary transition-opacity duration-700",
+          "fixed inset-0 h-full w-full bg-secondary transition-opacity duration-700",
           {
             "pointer-events-none opacity-0": !isMenuOpen,
             "pointer-events-auto z-50 opacity-80": isMenuOpen,
@@ -107,7 +107,7 @@ export default function Header() {
 function NavMenu({ isMenuOpen, onClose }) {
   return (
     <motion.div
-      className="fixed right-0 top-0 z-50 h-screen w-full bg-secondary font-minecraft uppercase text-primary md:w-navMenu"
+      className="fixed right-0 top-0 z-50 h-full w-full bg-secondary font-minecraft uppercase text-primary md:w-navMenu"
       initial="initial"
       animate={isMenuOpen ? "enter" : "exit"}
       variants={clippathInRight}

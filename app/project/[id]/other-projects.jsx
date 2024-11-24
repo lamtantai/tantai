@@ -1,32 +1,39 @@
 "use client";
 
-import React, { useState } from "react";
-
+import React, { useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
-import { useScroll, useMotionValueEvent } from "framer-motion";
-
+import { useInView } from "framer-motion";
 import HeroSection from "./hero-section";
+import { useSmoothScroll } from "@/app/components/locomotive-scroll";
 
 export default function OtherProjects({ nextProject }) {
+  const { stopScroll, startScroll } = useSmoothScroll();
+
+  const ref = useRef(null);
   const router = useRouter();
 
-  const { scrollYProgress } = useScroll();
+  const isInView = useInView(ref, { once: true });
 
-  const [isRedirected, setIsRedirected] = useState(false);
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest === 1 && !isRedirected) {
-      setIsRedirected(true);
-      setTimeout(() => {
-        router.push(nextProject.href);
-      }, 100);
+  useEffect(() => {
+    if (isInView) {
+      router.replace(nextProject.href);
+      stopScroll();
     }
+
+    return () => {
+      startScroll();
+    };
   });
 
   return (
     <>
       <HeroSection project={nextProject} />
+      <div className="relative" aria-hidden>
+        <div
+          className="absolute bottom-0 left-0 h-[1px] w-full opacity-0"
+          ref={ref}
+        />
+      </div>
     </>
   );
 }
