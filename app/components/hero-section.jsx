@@ -28,14 +28,14 @@ export default function HeroSection({ text }) {
       ref={container}
     >
       <motion.div
-        className="sticky top-0 h-screen bg-primary"
+        className="sticky top-0 h-dvh bg-primary"
         style={{ scale, opacity, y }}
       >
         <div className="flex h-full flex-col justify-end px-space-sm pb-space-md">
           <div className="space-y-3">
             <StatusTag />
 
-            <h1 className="text-large/tight font-semibold lg:max-w-[88%]">
+            <h1 className="text-large/tight font-semibold">
               <SplitText
                 text={text}
                 type="words"

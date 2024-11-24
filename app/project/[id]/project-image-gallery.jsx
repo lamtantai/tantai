@@ -9,7 +9,7 @@ import { clippathInDown } from "@/app/utils/animations";
 
 export default function ProjectImageGallery({ project }) {
   return (
-    <section className="w-full py-space-lg md:py-space-xl">
+    <section className="border-b-2 border-secondary">
       <Container>
         <ul className="space-y-4 lg:space-y-10">
           {project.images.map((image, i) => (
@@ -28,8 +28,9 @@ export default function ProjectImageGallery({ project }) {
             </AnimatedInView>
           ))}
         </ul>
-        <h3 className="mt-space-md text-center text-2xl font-semibold uppercase lg:text-6xl">
-          Scroll for next project
+
+        <h3 className="my-space-md text-center text-2xl font-semibold lg:text-6xl">
+          Scroll to explore more
         </h3>
       </Container>
     </section>

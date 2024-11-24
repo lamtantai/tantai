@@ -22,13 +22,13 @@ export default memo(function SplitText({
       variants={{
         enter: (delay) => ({
           transition: {
-            staggerChildren: 0.035,
+            staggerChildren: 0.015,
             delayChildren: delay,
           },
         }),
       }}
       custom={delay}
-      className={`${width === "full" ? "flex justify-between" : "inline-block"}`}
+      className={`h-full ${width === "full" ? "flex justify-between" : "inline-block"}`}
     >
       {type === "words" && <SplitWords words={words} animation={animation} />}
 

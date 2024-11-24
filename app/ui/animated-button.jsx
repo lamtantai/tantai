@@ -14,7 +14,7 @@ export default function AnimatedButton({ label, href, color, className }) {
     <Link
       href={href}
       className={twMerge(
-        "group relative inline-block w-fit font-minecraft text-lg font-semibold uppercase duration-500 hover:-translate-y-1",
+        "group relative inline-block w-fit pb-1 text-lg font-semibold uppercase duration-500 hover:-translate-y-1",
         themeClasses.text,
         className,
       )}
@@ -22,7 +22,7 @@ export default function AnimatedButton({ label, href, color, className }) {
       {label}
       <div
         className={twMerge(
-          "absolute bottom-0 left-0 h-[2px] w-full origin-right-center scale-x-0 transition-transform duration-500 group-hover:origin-left-center group-hover:scale-x-100",
+          "absolute bottom-0 left-0 h-[2px] w-full origin-left-center transition-transform duration-500 group-hover:origin-right-center group-hover:scale-x-0",
           themeClasses.bg,
         )}
       />

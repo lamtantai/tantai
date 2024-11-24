@@ -8,7 +8,10 @@ export const projects = [
     description:
       "Arcane 2 is a landing page for the TV series Arcane. The idea for this project came to me after seeing the announcement of Arcane's second season. The design for this project was inspired by the official website of Arcane.",
     techs: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+    mockup: "/images/projects/arcane/mockup.png",
+    mockupMobile: "/images/projects/portfolio/mockup-mobile.png",
     thumbnail: "/images/projects/arcane/thumbnail.png",
+    thumbnailMobile: "/images/projects/arcane/thumbnail-mobile.png",
     images: [
       "/images/projects/arcane/gallery-1.png",
       "/images/projects/arcane/gallery-2.png",
@@ -30,7 +33,10 @@ export const projects = [
     description:
       "Arcane 2 is a landing page for the TV series Arcane. The idea for this project came to me after seeing the announcement of Arcane's second season. The design for this project was inspired by the official website of Arcane.",
     techs: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+    mockup: "/images/projects/mate/mockup.png",
+    mockupMobile: "/images/projects/portfolio/mockup-mobile.png",
     thumbnail: "/images/projects/mate/thumbnail.png",
+    thumbnailMobile: "/images/projects/arcane/thumbnail-mobile.png",
     images: [
       "/images/projects/mate/gallery-1.png",
       "/images/projects/mate/gallery-2.png",
@@ -52,7 +58,10 @@ export const projects = [
     description:
       "Arcane 2 is a landing page for the TV series Arcane. The idea for this project came to me after seeing the announcement of Arcane's second season. The design for this project was inspired by the official website of Arcane.",
     techs: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+    mockup: "/images/projects/portfolio/mockup.png",
+    mockupMobile: "/images/projects/portfolio/mockup-mobile.png",
     thumbnail: "/images/projects/portfolio/thumbnail.png",
+    thumbnailMobile: "/images/projects/arcane/thumbnail-mobile.png",
     images: [
       "/images/projects/portfolio/gallery-1.png",
       "/images/projects/portfolio/gallery-2.png",

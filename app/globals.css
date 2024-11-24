@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /* ::selection {
-  background-color: #e9ebf1;
-  color: #0a0b0e;
+  background-color: #37fd12;
+  color: #222222;
 } */
 
 html {
@@ -17,11 +17,22 @@ section {
   background-color: var(--color-primary);
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @layer base {
   :root {
     --color-primary: #eeeded;
     --color-secondary: #222222;
     --color-tertiary: #e0eeee;
+    --color-accent: #37fd12;
+
+    --container-padding: clamp(1rem, 0.5665rem + 1.8497vw, 2rem);
   }
 }
 

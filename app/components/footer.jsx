@@ -29,7 +29,7 @@ export default function Footer() {
 
           <Link
             href="mailto:lttai.dev@gmail.com"
-            className="group relative overflow-clip text-xsmall/none"
+            className="group relative overflow-clip text-xsmall/tight"
           >
             <span className="relative inline-block origin-[50%_50%_-0.55em] text-nowrap uppercase duration-500 ease-in-out-quart rotate-x-0 lg:group-hover:rotate-x-90">
               Send me a message

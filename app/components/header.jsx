@@ -131,7 +131,9 @@ function NavMenu({ isMenuOpen, onClose }) {
       >
         {/* PAGE LINKS */}
         <div className="mt-20">
-          <h4 className="text-primary/70 mb-4 text-xs">Navigation</h4>
+          <h4 className="text-primary/70 mb-4 text-xs lg:text-sm">
+            Navigation
+          </h4>
 
           <DivideLine color="primary" />
 
@@ -146,7 +148,9 @@ function NavMenu({ isMenuOpen, onClose }) {
 
         {/* SOCIAL LINKS */}
         <div className="">
-          <h4 className="text-primary/70 mb-4 text-xs">Get in touch</h4>
+          <h4 className="text-primary/70 mb-4 text-xs lg:text-sm">
+            Get in touch
+          </h4>
 
           <ul className="flex gap-x-10">
             {socials.map((social) => (
@@ -173,14 +177,14 @@ function NavMenuItem({ item, onClick }) {
       href={item.href}
       className="block w-full overflow-hidden"
     >
-      <p
-        className={`relative font-semibold leading-none duration-200 hover:-translate-y-full ${path === item.href && "pointer-events-none -translate-y-full"}`}
+      <span
+        className={`relative block font-semibold leading-none duration-200 hover:-translate-y-full ${path === item.href && "pointer-events-none -translate-y-full"}`}
       >
         <span className="block text-primary">{item.name}</span>
         <span className="absolute block w-full bg-primary text-secondary">
           {item.name}
         </span>
-      </p>
+      </span>
     </Link>
   );
 }

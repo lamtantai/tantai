@@ -1,9 +1,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import SmoothScroll from "./components/locomotive-scroll/locomotive-scroll";
 
 import { Poppins } from "next/font/google";
 import Header from "./components/header";
+import SmoothScroll from "./components/locomotive-scroll";
 
 const poppins = Poppins({
   weight: ["400", "600", "800"],
