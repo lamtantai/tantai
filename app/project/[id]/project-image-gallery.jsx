@@ -15,7 +15,7 @@ export default function ProjectImageGallery({ project }) {
           {project.images.map((image, i) => (
             <AnimatedInView animation={clippathInDown} key={image}>
               <li>
-                <div className="relative aspect-[5/4] lg:aspect-video">
+                <div className="relative aspect-[5/4] bg-gray-300 lg:aspect-[3/2]">
                   <Image
                     src={image}
                     alt="project image"

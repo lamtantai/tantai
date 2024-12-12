@@ -39,7 +39,7 @@ function ProjectItem({ project, i }) {
       <AnimatedInView animation={clippathInUp}>
         <div className="relative aspect-square w-full overflow-hidden bg-secondary">
           <Image
-            src={project.mockup}
+            src={project.thumbnail}
             alt="project image"
             sizes="(min-width: 1024px) 60vw, 100vw"
             fill

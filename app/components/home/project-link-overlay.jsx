@@ -27,7 +27,7 @@ export default function ProjectLinkOverlay({ project }) {
     //SET THE MOUSE POSITION
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
-      const targetX = clientX - window.innerWidth / 2;
+      const targetX = clientX - window.innerWidth / 2 + 10;
       const targetY =
         clientY - window.innerHeight / 2 - el.getBoundingClientRect().top;
       mousePosition.x.set(targetX);

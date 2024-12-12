@@ -68,7 +68,7 @@ function SingleProjectDesktop({ project, clipPath }) {
         alt="project image"
         fill
         sizes="(min-width: 1024px) 100vw,0vw"
-        className="hidden object-cover duration-500 group-hover:scale-105 lg:block"
+        className="object-cover duration-500 group-hover:scale-105"
       />
 
       <ProjectLinkOverlay project={project} />

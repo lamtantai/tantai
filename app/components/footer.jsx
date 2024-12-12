@@ -35,7 +35,7 @@ export default function Footer() {
               Send me a message
             </span>
 
-            <span className="absolute bottom-0 left-0 origin-[50%_50%_-0.55em] underline decoration-wavy decoration-2 duration-500 ease-in-out-quart -rotate-x-90 lg:group-hover:rotate-x-0">
+            <span className="absolute bottom-0 left-0 origin-[50%_50%_-0.55em] overflow-hidden underline decoration-wavy decoration-2 duration-500 ease-in-out-quart -rotate-x-90 lg:group-hover:rotate-x-0">
               lltai.dev@gmail.com
             </span>
           </Link>
