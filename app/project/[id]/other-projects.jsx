@@ -3,7 +3,7 @@
 import React, { useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useInView } from "framer-motion";
-import HeroSection from "./hero-section";
+import HeroSection from "./project-description";
 import { useSmoothScroll } from "@/app/components/locomotive-scroll";
 
 export default function OtherProjects({ nextProject }) {

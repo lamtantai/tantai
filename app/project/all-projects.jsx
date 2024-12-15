@@ -37,7 +37,7 @@ function ProjectItem({ project, i }) {
   return (
     <div className="group relative overflow-clip">
       <AnimatedInView animation={clippathInUp}>
-        <div className="relative aspect-square w-full overflow-hidden bg-secondary">
+        <div className="shimmer-bg relative aspect-square w-full overflow-hidden">
           <Image
             src={project.thumbnail}
             alt="project image"

@@ -6,7 +6,7 @@ import DivideLine from "@/app/ui/divide-line";
 
 import { clippathInDown, opacity, slideInUp } from "@/app/utils/animations";
 
-export default function HeroSection({ project }) {
+export default function ProjectDescription({ project }) {
   return (
     <section className="">
       <div className="flex h-screen items-end">
@@ -69,12 +69,21 @@ export default function HeroSection({ project }) {
                   {project.description}
                 </p>
 
-                <AnimatedButton
-                  href={project.liveDemo}
-                  label="view live site"
-                  color="black"
-                  className="xl:text-xl"
-                />
+                <div className="flex gap-x-6">
+                  <AnimatedButton
+                    href={project.liveDemo}
+                    label="view live site"
+                    color="black"
+                    className="capitalize xl:text-xl"
+                  />
+
+                  <AnimatedButton
+                    href={project.repository}
+                    label="view code"
+                    color="black"
+                    className="capitalize xl:text-xl"
+                  />
+                </div>
               </AnimatedInView>
             </div>
           </div>

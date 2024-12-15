@@ -2,11 +2,11 @@ import React from "react";
 
 import { notFound } from "next/navigation";
 
-import HeroSection from "./hero-section";
 import ProjectImageGallery from "./project-image-gallery";
 import OtherProjects from "./other-projects";
 
 import { projects } from "@/app/lib/data";
+import ProjectDescription from "./project-description";
 
 export default async function page({ params }) {
   const param = (await params).id;
@@ -23,7 +23,7 @@ export default async function page({ params }) {
 
   return (
     <>
-      <HeroSection project={currentProject} />
+      <ProjectDescription project={currentProject} />
       <ProjectImageGallery project={currentProject} />
       <OtherProjects nextProject={nextProject} />
     </>

@@ -7,7 +7,7 @@ export const projects = [
     type: "Web Development",
     description:
       "Brick is my first simple eCommerce website with a responsive design, offering basic features such as product listings, a shopping cart, a simulated checkout process, and an intuitive user interface.",
-    techs: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Redux"],
+    techs: ["React", "Redux", "Next.js", "Tailwind CSS", "Framer Motion"],
     mockup: "/images/projects/brick/mockup.png",
     thumbnail: "/images/projects/brick/thumbnail.png",
     images: [
@@ -15,11 +15,7 @@ export const projects = [
       "/images/projects/brick/picture-2.png",
       "/images/projects/brick/picture-3.png",
     ],
-    achievements: [
-      "Enhanced understanding of state management in React.",
-      "Improved skills in Tailwind CSS for styling layouts.",
-    ],
-    repository: "https://github.com/username/mate-clone",
+    repository: "https://github.com/lamtantai/brick-buy",
     liveDemo: "https://brick-buy.vercel.app/",
   },
   {
@@ -42,7 +38,7 @@ export const projects = [
       "Created a visually engaging and responsive layout inspired by the Arcane series.",
       "Learned the fundamentals of React and Framer Motion and applied them effectively in the project.",
     ],
-    repository: "https://github.com/username/mate-clone",
+    repository: "https://github.com/lamtantai/arcane",
     liveDemo: "https://arcane-landing-page.vercel.app/",
   },
   {
@@ -61,11 +57,7 @@ export const projects = [
       "/images/projects/portfolio/picture-2.png",
       "/images/projects/portfolio/picture-3.png",
     ],
-    achievements: [
-      "Enhanced understanding of state management in React.",
-      "Improved skills in Tailwind CSS for styling layouts.",
-    ],
-    repository: "https://github.com/username/mate-clone",
+    repository: "https://github.com/lamtantai/tantai",
     liveDemo: "https://lamtai.vercel.app/",
   },
   {
@@ -84,11 +76,7 @@ export const projects = [
       "/images/projects/mate/picture-2.png",
       "/images/projects/mate/picture-3.png",
     ],
-    achievements: [
-      "Enhanced understanding of state management in React.",
-      "Improved skills in Tailwind CSS for styling layouts.",
-    ],
-    repository: "https://github.com/username/mate-clone",
+    repository: "https://github.com/lamtantai/yerba-mate",
     liveDemo: "https://matemeta.vercel.app/",
   },
 ];

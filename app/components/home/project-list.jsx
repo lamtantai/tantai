@@ -30,7 +30,7 @@ export default function ProjectList() {
   const clipPath = useMotionTemplate`inset(${percent} 0 0 0)`;
 
   return (
-    <section className="border-y-2 border-secondary font-minecraft font-semibold uppercase">
+    <section className="font-minecraft font-semibold uppercase">
       <div ref={ref} className="relative z-10">
         <div className="absolute left-0 top-0 hidden h-full w-full lg:block">
           <div
@@ -48,7 +48,7 @@ export default function ProjectList() {
         </div>
       </div>
 
-      <div className="mb-space-xl mt-space-sm text-center lg:text-5xl">
+      <div className="py-space-md text-center lg:text-5xl">
         <AnimatedButton
           label="see more project"
           href="/project"
@@ -62,7 +62,10 @@ export default function ProjectList() {
 
 function SingleProjectDesktop({ project, clipPath }) {
   return (
-    <motion.div className="overlay group overflow-hidden" style={{ clipPath }}>
+    <motion.div
+      className="overlay shimmer-bg group overflow-hidden"
+      style={{ clipPath }}
+    >
       <Image
         src={project.mockup}
         alt="project image"
@@ -90,7 +93,7 @@ function SingleProjectMobile({ project, i }) {
         </div>
       </div>
 
-      <div className="relative aspect-square bg-gray-500 md:aspect-video lg:hidden">
+      <div className="shimmer-bg relative aspect-square bg-gray-500 md:aspect-video lg:hidden">
         <Image
           src={project.mockup}
           alt="project image"

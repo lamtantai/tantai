@@ -45,3 +45,17 @@ section {
     color: theme("colors.primary");
   }
 }
+
+.shimmer-bg {
+  background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+  background-size: 300%;
+  background-position-x: 100%;
+  animation: shimmer 2s linear infinite;
+  border: 1px solid black;
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: 0%;
+  }
+}

@@ -27,14 +27,14 @@ const translateX = {
 export default function InfiniteText() {
   return (
     <motion.div
-      className="bg-primary text-xlarge/none font-semibold text-secondary"
+      className="whitespace-nowrap bg-primary text-xlarge/none font-semibold text-secondary"
       initial="initial"
       whileInView="enter"
     >
       <AnimatedInView animation={clippathInLeft}>
         <div
           id="text-infinite"
-          className="relative flex flex-nowrap overflow-clip py-space-md"
+          className="relative flex flex-nowrap overflow-clip whitespace-nowrap py-space-md"
           aria-hidden="true"
         >
           <motion.span className="text-nowrap" variants={translateX}>

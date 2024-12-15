@@ -35,7 +35,7 @@ const navItems = [
 const socials = [
   {
     name: "Github",
-    href: "/",
+    href: "https://github.com/lamtantai",
   },
   {
     name: "Email",
@@ -44,7 +44,7 @@ const socials = [
 
   {
     name: "Phone",
-    href: "/about",
+    href: "tel:0384724567",
   },
 ];
 

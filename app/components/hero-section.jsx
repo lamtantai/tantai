@@ -24,7 +24,7 @@ export default function HeroSection({ text }) {
 
   return (
     <section
-      className="relative -z-10 -mb-[100vh] h-[200vh] bg-secondary"
+      className="relative -z-10 -mb-[100dvh] h-[200dvh] bg-secondary"
       ref={container}
     >
       <motion.div
